@@ -5,7 +5,7 @@ module Synchro
     end
 
     def prepare_data
-      @service_class.constantize.prepare_data
+      @service_class.constantize.new.prepare_data
     end
   end
 end
