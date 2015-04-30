@@ -7,7 +7,7 @@ module Synchro
 
     module ClassMethods
       def synchronize
-        after_create :synchronize
+        after_create :synchro_synchronize
       end
 
       include Synchro::Synchronize::InstanceMethods
@@ -15,7 +15,7 @@ module Synchro
 
     module InstanceMethods
       def synchro_synchronize
-        puts ">>>>>>>>>>>>>>>>>>> YAY! <<<<<<<<<<<<<<<<<<<<"
+        Rails.logger.info ">>>>>>>>>>>>>>>>>> YAY! <<<<<<<<<<<<<<<<<<"
       end
 
       private :synchro_synchronize
