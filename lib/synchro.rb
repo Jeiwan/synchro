@@ -1,3 +1,5 @@
+require 'synchro/service_runner'
+require 'synchro/nsq'
 require 'krakow'
 
 module Synchro
