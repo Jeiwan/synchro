@@ -1,3 +1,5 @@
+require 'krakow'
+
 module Synchro
   def synchro
     after_create :synchro_synchronize
@@ -7,7 +9,9 @@ module Synchro
 
   module InstanceMethods
     def synchro_synchronize
-      Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>> YAY <<<<<<<<<<<<<<<<<<<<<<<<"
+      Rails.logger.info ">>>>>>>>>>>>>>>>>>>>>>> #{self.class.inspect} <<<<<<<<<<<<<<<<<<<<<<<<"
+      prepared_data = Synchro::ServiceRunner.new(self.class).prepare_data
+      Synchro::NSQ.new.post_message(prepared_data)
     end
 
     private :synchro_synchronize

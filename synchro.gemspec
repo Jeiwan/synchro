@@ -18,5 +18,6 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails"
+  s.add_dependency "krakow"
   s.add_development_dependency "rspec-rails", "~> 3.2.1"
 end
