@@ -1,8 +1,7 @@
 module Synchro
   module Synchronize
-    extend ActiveSupport::Concern
-
     included do
+      extend ClassMethods
     end
 
     module ClassMethods
@@ -22,5 +21,3 @@ module Synchro
     end
   end
 end
-
-ActiveRecord::Base.send :include, Synchro::Synchronize
