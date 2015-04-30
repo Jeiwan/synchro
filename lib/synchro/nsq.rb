@@ -12,6 +12,7 @@ module Synchro
       )
       json_message = JSON.generate({ message: message })
       producer.write(json_message)
+      producer.terminate
     end
   end
 end
