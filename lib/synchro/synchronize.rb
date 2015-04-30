@@ -8,12 +8,12 @@ module Synchro
     module ClassMethods
       def synchronize
         after_create :synchro_synchronize
-      end
 
-      include Synchro::Synchronize::InstanceMethods
+        include Synchro::Synchronize::LocalInstanceMethods
+      end
     end
 
-    module InstanceMethods
+    module LocalInstanceMethods
       def synchro_synchronize
         Rails.logger.info ">>>>>>>>>>>>>>>>>> YAY! <<<<<<<<<<<<<<<<<<"
       end
