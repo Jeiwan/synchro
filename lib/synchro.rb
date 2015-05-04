@@ -1,6 +1,8 @@
+require 'synchro/railtie' if defined? Rails
 require 'synchro/service_runner'
 require 'synchro/nsq'
 require 'krakow'
+require 'logger'
 
 module Synchro
   def synchro
