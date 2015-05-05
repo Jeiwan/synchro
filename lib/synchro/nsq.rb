@@ -1,7 +1,7 @@
 module Synchro
   class NSQ
-    def initialize(host = 'localhost', port = 4150, topic = 'current_pharmacy', sender_model)
-      @host, @port, @topic, @sender_model = host, port, topic, sender_model
+    def initialize(sender: '', host: 'localhost', port: 4150, topic: 'current_pharmacy')
+      @host, @port, @topic, @sender_model = host, port, topic, sender
     end
 
     def post_message(message)
